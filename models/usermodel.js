@@ -1,5 +1,4 @@
 import mongoose from "mongoose";
-import bcrypt from "bcryptjs";
 
 const UserSchema = new mongoose.Schema({
   name: {
@@ -20,11 +19,11 @@ const UserSchema = new mongoose.Schema({
     type: String,
     required: [true, "Password is required"],
     minlength: [6, "Password must be at least 6 characters long"],
-    select: false, // Prevents returning password in queries
+    select: false, 
   },
   image: {
     type: String,
-    default: "default.jpg", // Default image if none is provided
+    default: "default.jpg", 
   },
 }, { timestamps: true });
 
